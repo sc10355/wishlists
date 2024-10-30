@@ -47,8 +47,12 @@ jobs:
           python -m pip install --upgrade pip setuptools
           curl -sSL https://install.python-poetry.org | python3 -
           export PATH="$HOME/.local/bin:$PATH"
-          poetry install --with dev  
-          python -m pip install flake8 pylint  
+          poetry install --no-root --with dev
+          python -m pip install flake8 pylint
+
+      - name: Verify installed dependencies
+        run: |
+          poetry run pip list
 
       - name: Linting
         run: |
