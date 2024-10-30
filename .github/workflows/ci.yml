@@ -49,13 +49,6 @@ jobs:
           export PATH="$HOME/.local/bin:$PATH"
           poetry install
 
-      - name: Wait for PostgreSQL to be ready
-        run: |
-          until pg_isready -h postgres -p 5432; do
-            echo "Waiting for PostgreSQL to be ready..."
-            sleep 5
-          done
-
       - name: Linting
         run: |
           flake8 service tests --count --select=E9,F63,F7,F82 --show-source --statistics
