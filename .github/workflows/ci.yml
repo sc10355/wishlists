@@ -44,15 +44,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m ensurepip --upgrade
-          python -m pip install --upgrade pip setuptools
+          python -m pip install --upgrade pip setuptools wheel
           curl -sSL https://install.python-poetry.org | python3 -
           export PATH="$HOME/.local/bin:$PATH"
-          poetry install --no-root --with dev
-          python -m pip install flake8 pylint
-
+          poetry install
+    
       - name: Verify installed dependencies
-        run: |
-          poetry run pip list
+        run: poetry check
 
       - name: Linting
         run: |
@@ -60,13 +58,12 @@ jobs:
           poetry run flake8 service tests --count --max-complexity=10 --max-line-length=127 --statistics
           poetry run pylint service tests --max-line-length=127
 
-      - name: Run unit tests with green
+      - name: Run unit tests with pytest
         run: |
           export FLASK_APP=service:app
           poetry run pytest --pspec --cov=service --cov-fail-under=95 --disable-warnings
         env:
           DATABASE_URI: "postgresql+psycopg://postgres:pgs3cr3t@postgres:5432/testdb"
-          ENV: "testing"
 
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v3.1.4
