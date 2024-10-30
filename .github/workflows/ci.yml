@@ -47,4 +47,4 @@ jobs:
           DATABASE_URI: "postgresql+psycopg://postgres:pgs3cr3t@localhost:5432/testdb"
 
       - name: Upload code coverage
-        uses: codecov/codecov-action@v4.6.0
+        uses: codecov/codecov-action@v3.1.4
