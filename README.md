@@ -1,5 +1,5 @@
 # Wishlists Service
-
+[![Build Status](https://github.com/sc10355/wishlists/actions/workflows/tdd-tests.yml/badge.svg)](https://github.com/sc10355/wishlists/actions)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-red.svg)](https://www.python.org/)
 
