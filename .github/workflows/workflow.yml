@@ -34,7 +34,7 @@ jobs:
             
       - name: Install dependencies
         run: |
-          pip install poetry 
+          python -m pip install poetry
           poetry config virtualenvs.create false
           poetry install
 
