@@ -34,6 +34,7 @@ jobs:
             
       - name: Install dependencies
         run: |
+          apt update -y && apt install curl -y
           curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
           poetry config virtualenvs.create false
           poetry install
