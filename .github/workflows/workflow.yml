@@ -1,3 +1,5 @@
+
+
 name: CI Build
 on:
   push:
@@ -32,9 +34,10 @@ jobs:
             
       - name: Install dependencies
         run: |
+          pip install poetry
           poetry config virtualenvs.create false
           poetry lock --no-update
-          poetry install
+
 
       - name: Linting
         run: |
