@@ -35,8 +35,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install "honcho==1.1.0" "pylint==3.2.2" "flake8==7.0.0" "black==24.4.2" "pytest==8.2.1" "pytest-pspec==0.0.4" "pytest-cov==5.0.0" "factory-boy==3.3.0" "coverage==7.5.3" "httpie==3.2.2" "poetry-plugin-export==1.7.1" Flask = "^3.0.3"
-flask-sqlalchemy = "3.1.1"
+          pip install "honcho==1.1.0" "pylint==3.2.2" "flake8==7.0.0" "black==24.4.2" "pytest==8.2.1" "pytest-pspec==0.0.4" "pytest-cov==5.0.0" "factory-boy==3.3.0" "coverage==7.5.3" "httpie==3.2.2" "poetry-plugin-export==1.7.1" "Flask==3.0.3"
+"flask-sqlalchemy==3.1.1"
 
           poetry config virtualenvs.create false
          
