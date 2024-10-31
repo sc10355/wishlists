@@ -44,9 +44,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install -U pip poetry
+#          python -m pip install -U pip poetry
+#          poetry config virtualenvs.create false
+#          poetry install
+          python -m pip install --upgrade pip
+          pip install "honcho==1.1.0" "pylint==3.2.2" "flake8==7.0.0" "black==24.4.2" "pytest==8.2.1" "pytest-pspec==0.0.4" "pytest-cov==5.0.0" "factory-boy==3.3.0" "coverage==7.5.3" "httpie==3.2.2" "poetry-plugin-export==1.7.1" "Flask==3.0.3" "flask-sqlalchemy==3.1.1"
+          pip install "retry2===0.9.5"  "python-dotenv==1.0.1" "gunicorn==22.0.0"
           poetry config virtualenvs.create false
-          poetry install
 
       - name: Run Code Quality Checks
         run: |
