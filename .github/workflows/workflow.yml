@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install poetry
-          poetry config virtualenvs.create false
+          poetry config virtualenvs.create true
           poetry lock --no-update
           poetry install
 
